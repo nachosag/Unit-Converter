@@ -1,8 +1,8 @@
 import reflex as rx
 
-class Select(rx.State):
-    from_unit: str = " "
-    to_unit: str = " "
+class SelectState(rx.State):
+    from_unit: str = "  "
+    to_unit: str = "  "
 
     @rx.event
     def convert_from(self, value: str):
