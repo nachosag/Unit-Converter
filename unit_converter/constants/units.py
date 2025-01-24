@@ -2,7 +2,6 @@ from enum import Enum
 
 class Units(Enum):
     LENGHT: list[str] = [
-        "Select an option",
         "Millimeter", 
         "Centimeter", 
         "Meter", 
@@ -14,7 +13,6 @@ class Units(Enum):
     ]
     
     WEIGHT: list[str] = [
-        "Select an option",
         "Milligram", 
         "Gram", 
         "Kilogram", 
@@ -23,7 +21,6 @@ class Units(Enum):
     ]
     
     TEMPERATURE: list[str] = [
-        "Select an option",
         "Celsius", 
         "Fahrenheit", 
         "Kelvin"

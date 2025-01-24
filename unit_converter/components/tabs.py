@@ -17,6 +17,22 @@ def tabs():
                             form_screen(),
                         ),
                         value="lenght_tab"
+                    ),
+                    rx.tabs.content(
+                        rx.cond(
+                            FormState.show_results,
+                            results_screen(),
+                            form_screen(),
+                        ),
+                        value="weight_tab"
+                    ),
+                    rx.tabs.content(
+                        rx.cond(
+                            FormState.show_results,
+                            results_screen(),
+                            form_screen(),
+                        ),
+                        value="temperature_tab"
                     )
                 )
             )

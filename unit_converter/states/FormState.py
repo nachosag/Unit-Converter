@@ -3,15 +3,17 @@ from unit_converter.constants.Units import Units
 
 class FormState(rx.State):
     show_results: bool = False
-    result: float = 0
+    result: dict = {
+        "convert_to": "",
+        "result": 0
+    }
 
     @rx.event
     def handle_submit(self, form_data: dict):      
         
-        self.verify(form_data["value"])
+        # self.verify(form_data["value"])
         self.convert(float(form_data["value"]), form_data["convert_from"], form_data["convert_to"])
             
-        
         self.show_results = True
     
     @rx.event
@@ -21,8 +23,9 @@ class FormState(rx.State):
     def convert(self, input: float, convert_from: str, convert_to: str):
         
         try:
-            self.result = input * Units.LENGHT_UNITS.value[f"{convert_from}"]
-            self.result = self.result / Units.LENGHT_UNITS.value[f"{convert_to}"]
+            self.result["convert_to"] = convert_to
+            self.result["result"] = input * Units.LENGHT_UNITS.value[f"{convert_from}"]
+            self.result["result"] = self.result["result"] / Units.LENGHT_UNITS.value[f"{convert_to}"]
         except Exception as e:
             self.results = -1
             
