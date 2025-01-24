@@ -5,10 +5,11 @@ from unit_converter.constants.Units import Units
 
 def results_screen():
     return rx.vstack(
-        rx.heading("Results"),
+        rx.heading("Result of your calculation"),
         rx.hstack(
-            rx.text(FormState.result["result"]),
-            rx.text(FormState.result["convert_to"])
+            rx.text(
+                f"{FormState.initial_value} {FormState.convert_from} = {FormState.final_value} {FormState.convert_to}"
+            )
         ),
         rx.button(
             "Reset",
@@ -33,7 +34,7 @@ def form_screen():
                     "Please enter a valid number",
                     match="typeMismatch"
                 ),
-                name="lenght_field"
+                name="number_field"
             ),
             rx.form.field(
                 rx.form.label("Unit to convert from"),
