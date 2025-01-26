@@ -1,31 +1,23 @@
 from enum import Enum
 
+
 class Units(Enum):
+
     LENGHT: list[str] = [
-        "Millimeter", 
-        "Centimeter", 
-        "Meter", 
-        "Kilometer", 
-        "Inch", 
-        "Foot", 
-        "Yard", 
-        "Mile"
+        "Millimeter",
+        "Centimeter",
+        "Meter",
+        "Kilometer",
+        "Inch",
+        "Foot",
+        "Yard",
+        "Mile",
     ]
-    
-    WEIGHT: list[str] = [
-        "Milligram", 
-        "Gram", 
-        "Kilogram", 
-        "Ounce", 
-        "Pound"
-    ]
-    
-    TEMPERATURE: list[str] = [
-        "Celsius", 
-        "Fahrenheit", 
-        "Kelvin"
-    ]
-    
+
+    WEIGHT: list[str] = ["Milligram", "Gram", "Kilogram", "Ounce", "Pound"]
+
+    TEMPERATURE: list[str] = ["Celsius", "Fahrenheit", "Kelvin"]
+
     LENGHT_UNITS = {
         "Meter": 1,  # Unidad base para longitud
         "Centimeter": 0.01,  # 1 cm = 0.01 m
